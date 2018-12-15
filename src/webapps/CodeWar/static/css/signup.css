@@ -1,0 +1,158 @@
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-repeat: no-repeat;
+    background-size: 120% auto;
+}
+
+.btn.btn-lg.btn-primary.btn-block:hover {
+    background-color: #cccccc;
+}
+
+.btn.btn-lg.btn-primary.btn-block {
+    background-color: #6c757d;
+    margin-left: 0px;
+    margin-top: 50px;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.form-control:hover {
+    background-color: lightgrey;
+}
+
+.form-control {
+    transition-duration: 0.5s;
+    cursor: pointer;
+    background-color: white;
+}
+
+.large-header {
+    position: relative;
+    width: 100%;
+    background: #333;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+
+#large-header {
+    background-image: url("https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg");
+    z-index: 1;
+}
+
+.main-title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #b3cccc;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 99999999 !important;
+}
+
+.demo-1 .main-title {
+    text-transform: uppercase;
+    font-size: 4.2em;
+    letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+    font-weight: 200;
+}
+
+@media only screen and (max-width: 768px) {
+    .demo-1 .main-title {
+        font-size: 3em;
+    }
+}
+
+#id_username:hover {
+    background-color: dimgray;
+}
+
+input {
+    width: 400px;
+    height: 30px;
+    background-color: white;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+input {
+    margin-top: 10px;
+
+}
+
+input [type="text"] {
+    color: red;
+}
+
+.username-div {
+    font-size: 13px;
+    margin-left: 100px;
+}
+
+.password-div {
+    font-size: 13px;
+    margin-left: 100px;
+}
+
+border {
+    display: none
+}
+
+a.navbar-brand-new {
+    font-size: x-large;
+}
+
+.navbar-nav.ml-auto {
+    font-size: larger;
+}
+
+.navbar {
+    height: 30px;
+}
+.title {
+    font-size: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#id_bio {
+    color: red;
+}
+
+#id_email {
+    color: red;
+}
+
+#id_password1 {
+    color: red;
+}
+
+#id_password2 {
+    color: red;
+}
+
+#id_last_name {
+    color: red;
+}
+
+#id_first_name {
+    color: red;
+}
+
+#id_username {
+    color: red;
+}

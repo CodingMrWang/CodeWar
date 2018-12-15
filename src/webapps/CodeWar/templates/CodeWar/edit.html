@@ -1,0 +1,60 @@
+{% extends "CodeWar/base.html" %}
+{% block title %}Edit Profile{% endblock %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand-new" href="#">Code War</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>
+    Edit
+</h1>
+<form enctype="multipart/form-data" action="{% url 'edit' %}" method="post">
+    {% csrf_token %}
+    {% for error in form.non_field_errors %}
+    <p style="color:#ff0000">
+        {{ error }}
+    </p>
+    {% endfor %}
+    <table class="inputarea">
+        {% for field in form2.visible_fields %}
+        <tr>
+            <td>{{ field.label_tag }}</td>
+            <td>{{ field }}</td>
+            <td style="color: red">{{ field.errors }}</td>
+        </tr>
+        {% endfor %}
+        {% for field in form1.visible_fields %}
+        <tr>
+            <td>{{ field.label_tag }}</td>
+            <td>{{ field }}</td>
+            <td style="color: red">{{ field.errors }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="Save" name="save"><br>
+</form>
+{% endblock %}
+</html>

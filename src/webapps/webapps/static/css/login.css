@@ -1,0 +1,132 @@
+body {
+
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image:"/media/background.png";
+  background-repeat: no-repeat;
+  background-size: 130%  auto;
+
+}
+.signin {
+  margin-top: 15%;
+  width:40%;
+  margin-left: 15%;
+
+}
+
+.signin input[type="username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn.btn-lg.btn-primary.btn-block {
+background-color: #6c757d;
+  margin-left: 120px;
+  margin-top: 50px;
+  width: 250px;
+  height:50px;
+  border-radius: 10px;
+}
+
+.mt-5.mb-3.text-muted{
+  font-size: 12px;
+  width: 200px;
+  margin-left: 150px;
+}
+
+.form-control {
+/*transition-duration: 0.5s;*/
+  cursor: pointer;
+}
+.large-header {
+  position: relative;
+  width: 100%;
+  /*background: #333;*/
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+}
+#large-header {
+  background-image: url("https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg");
+  z-index: 1;
+}
+
+.main-title {
+  position:absolute;
+  margin: 0;
+  padding: 0;
+  color: #f9f1e9;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  z-index:  99999999!important;
+}
+.demo-1 .main-title {
+  text-transform: uppercase;
+  font-size: 4.2em;
+  letter-spacing: 0.1em;
+}
+.main-title .thin {
+  font-weight: 200;
+}
+@media only screen and (max-width: 768px) {
+  .demo-1 .main-title {
+    font-size: 3em;
+  }
+}
+
+
+.display-new-heading {
+  width:600px;
+  font-size:50px;
+  margin-bottom: 40px;
+}
+#id_username {
+   width: 300px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: red;
+}
+
+.username-div {
+  font-size: 13px;
+  margin-left: 100px;
+}
+
+.password-div {
+  font-size: 13px;
+  margin-left: 100px;
+}
+#id_password {
+  width: 300px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 20px;
+  color: red;
+
+
+}
+border {
+  display:none
+}
+
+a.navbar-brand-new {
+  font-size: x-large;
+}
+.navbar-nav.ml-auto{
+  font-size: larger;
+}

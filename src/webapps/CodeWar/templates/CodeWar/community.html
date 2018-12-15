@@ -1,0 +1,147 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code War</title>
+    <link rel="shortcut icon" href="{% static 'media/favicon.ico' %}"/>
+    <link rel="stylesheet" href="http://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/iconandmaterial' %}">
+    <link href="{% static 'css/community.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/community.js' %}"></script>
+</head>
+<body>
+<div class="modal fade in" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Please type in the slogan for this room</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="codewar/createRoom">
+                    {% csrf_token %}
+                    <div>
+                        <input id="slogan-content" type="text" class="room-slogan" name="slogan">
+                    </div>
+                    <div>
+                        <select id="selected-room-type" name="room_type">
+                            <option value="private">Private Room</option>
+                            <option value="public">Public Room</option>
+                        </select>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="create-room-button">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade in" id="invitationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">There is no invitation pending.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="message-div-indicator">
+                    <p id="invitation-message"></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="timestamp" value="{{timestamp}}">
+<div id="video-div">
+    <video width=120% height=150% autoplay muted controls loop id="myVideo">
+        <source src="{% static 'video/Work.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<iframe id="music-iframe-violet" allow="autoplay" src="{% static 'music/silence.mp3' %}"></iframe>
+<audio id="player" autoplay loop>
+    <source src="{% static 'music/violet.mp3' %}" type="audio/mp3">
+</audio>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <h3> Code War</h3>
+            <div class="sidebar-sticky">
+                <a class="personal-photo-hyperlink" href="{% url 'edit'%}"><img class="left-sidebar-user-photo"
+                                                                                src="/static/media/{{pic}}" height="95"
+                                                                                width="145" alt="Bumble"></a>
+                <ul class="nav flex-column"><br>
+                    <li class="nav-item">
+                        <a class="nav-link" id="user-profile">
+                            <span data-feather="file"></span>
+                            User Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="show-ranking">
+                            <span data-feather="users"></span>
+                            Ranking
+                        </a>
+                    </li>
+                </ul>
+                <div class="operation-in-sidebar">
+                    <div>
+                        <a class="notification-envelop" data-toggle="modal" data-target="#invitationModal"><img
+                                class="notification-envelop-img" id="envelop-signal-svg"
+                                src="/codewar/media/normal-envelop.svg" width="120" height="50"></a></div>
+                    <button type="button" class="btn btn-primary btn-bot" data-toggle="modal"
+                            data-target="#createModal">
+                        <span class="glyphicon glyphicon-plus"></span> Create Room
+                    </button>
+                    <form method="get" action="/codewar/indi-battle">
+                        {% csrf_token %}
+                        <button id="battle-button" class="btn btn-primary btn-bot" value=battle>Individual Battle
+                        </button>
+                    </form>
+
+                    <div>
+                        <button id="logout-button" class="btn btn-primary btn-bot"
+                                onclick="location.href='{% url 'logout' %}'" value="logout"> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+</div>
+</body>
+</html>

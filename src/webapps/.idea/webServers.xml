@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c15a8748-b7dc-48ae-9d9d-491f927afe06" name="team10" url="http://ec2-52-91-80-54.compute-1.amazonaws.com">
+        <fileTransfer host="ec2-52-91-80-54.compute-1.amazonaws.com" port="22" privateKey="$USER_HOME$/CMU/CC/ccproject0.pem" rootFolder="/home/ubuntu/Team10/" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

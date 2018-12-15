@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="{% static 'css/edit-profile.css' %}" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark nav_top">
+    <a class="navbar-brand" href="{% url 'home' %}">CodeWar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+
+                <a href="home">Home</a>
+            </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+<form enctype="multipart/form-data" action="{% url 'edit' %}" method="post">
+    <h1 class="title">{{ request.user.username }}</h1>
+    <table class="table" align="center" cellspacing="10">
+        <tr class="name">
+            <td>{{ form2.first_name.label }}:&nbsp;&nbsp;</td>
+            <td>{{ form2.first_name }}</td>
+            <td>{{ form2.first_name.errors }}</td>
+        </tr>
+        <tr>
+            <td>{{ form2.last_name.label }}:&nbsp;&nbsp;</td>
+            <td>{{ form2.last_name }}</td>
+            <td>{{ form2.last_name.errors }}</td>
+        </tr>
+        <tr>
+            <td>{{ form2.email.label }}:&nbsp;&nbsp;</td>
+            <td>{{ form2.email }}</td>
+            <td>{{ form2.email.errors }}</td>
+        </tr>
+        <tr>
+            <td>{{ form1.age.label }}:&nbsp;&nbsp;</td>
+            <td>{{ form1.age }}</td>
+            <td>{{ form1.age.errors }}</td>
+        </tr>
+        <tr>
+            <td>{{ form1.bio.label }}:&nbsp;&nbsp;</td>
+            <td>{{ form1.bio }}</td>
+        </tr>
+        <tr>
+            <td>{{ form1.picture.label }}:&nbsp;&nbsp;</td>
+            <td>{{ form1.picture }}</td>
+            <td>{{ form1.picture.errors }}</td>
+        </tr>
+        <tr>
+            <td>{{ form2.password1.label }}:&nbsp;&nbsp;</td>
+            <td>{{ form2.password1 }}</td>
+            <td>{{ form2.password1.errors }}</td>
+        </tr>
+        <tr>
+            <td>{{ form2.password2.label }}:&nbsp;&nbsp;</td>
+            <td>{{ form2.password2 }}</td>
+            <td>{{ form2.password2.errors }}</td>
+        </tr>
+
+    </table>
+    <td><input type="submit" value="Save" class="btn btn-primary"></td>
+
+    {% csrf_token %}
+</form>
+</body>

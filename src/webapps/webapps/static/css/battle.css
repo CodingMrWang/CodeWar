@@ -1,0 +1,126 @@
+.container__2WTi .action__38Xc .runcode__1EDI:not(:disabled) {
+    border-color: #b0bec5;
+}
+
+.container__2WTi .action__38Xc .runcode__1EDI {
+    margin-right: 15px;
+    min-width: 80px;
+}
+
+#score {
+    margin-left: 100px;
+    color: red;
+    font-size: large;
+}
+
+#myBar {
+    margin: 10px;
+}
+
+.css-1jr96g8-sm {
+    display: inline-flex;
+    vertical-align: middle;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(38, 50, 56, 0.2) 0px 0px 0px 1px inset;
+    height: 32px;
+    font-size: 13px;
+    border-radius: 3px;
+    transition: all 0.18s ease-in-out 0s;
+    outline: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    background: rgb(69, 90, 100);
+    padding: 0px 9px;
+}
+
+.css-2m2ejb-sm {
+    display: inline-flex;
+    vertical-align: middle;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 20px;
+    cursor: pointer;
+    color: rgb(69, 90, 100);
+    box-shadow: none;
+    height: 32px;
+    font-size: 13px;
+    border-radius: 3px;
+    transition: all 0.18s ease-in-out 0s;
+    outline: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(69, 90, 100);
+    border-image: initial;
+    background: transparent;
+    padding: 0px 9px;
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+}
+
+#help {
+    background-color: #ff9966;
+    color: #000000;
+}
+
+#rl {
+    margin-left: -35px;
+    margin-top: 20px;
+}
+
+#left {
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    overflow-y: scroll;
+}
+
+#right {
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+    top: 70px;
+    overflow-y: scroll;
+}
+
+#editor {
+    height: 57%;
+}
+
+.css-1ponsav {
+    font-size: 16px;
+    color: rgb(33, 33, 33);
+    font-weight: 600;
+    line-height: 35px;
+}
+
+.content__eAC7 {
+    margin: 1em 0;
+    font-size: 13px;
+}
+
+pre {
+    padding: 1em;
+    overflow: auto;
+    box-sizing: border-box;
+    display: block;
+    background-color: #E8E8E8;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.nav_top {
+    height: 10px;
+}
